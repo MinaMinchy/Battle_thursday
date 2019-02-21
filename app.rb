@@ -23,6 +23,7 @@ class Battle < Sinatra::Base
   get '/attack' do
     @game = $game
     @game.attack(@game.player2)
+    @game.switch_player
     # @player1 = $game.player1.name
     # @player2 = $game.player2.name
     # @points = $game.player2.points

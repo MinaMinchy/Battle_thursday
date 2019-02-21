@@ -14,4 +14,17 @@ describe Game do
     expect(player1).to receive(:change_points).with(-10)
     battle.attack(player1)
   end
+  it "knows the current player" do
+    player1 = double :player1, change_points: { }
+    player2 = double :player2
+    battle = Game.new(player1, player2)
+    expect(battle.current_player).to eq(player1)
+  end
+  it "can switch current_player" do
+    player1 = double :player1, change_points: { }
+    player2 = double :player2
+    battle = Game.new(player1, player2)
+    battle.switch_player
+    expect(battle.current_player).to eq(player2)
+  end
 end
