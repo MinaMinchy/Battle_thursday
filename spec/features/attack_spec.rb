@@ -6,10 +6,9 @@ feature 'attack' do
     click_link('Attack')
     expect(page).to have_content("Maria attacked Sarah")
   end
-  scenario "player1 attacks player 2 and player 2's HP is reduced by 10" do
+  scenario "HP is reduced by 10" do
     sign_in_and_play
-    # start with 30 points
     click_link('Attack')
-    expect(page).to have_content("Sarah has 20")
+    expect(page).to have_content("50/60 HP")
   end
 end
