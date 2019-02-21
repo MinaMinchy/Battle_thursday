@@ -5,4 +5,9 @@ feature 'hit points' do
     sign_in_and_play
     expect(page).to have_content("Sarah has 60 points")
  end
+
+ scenario "see own hit points" do
+   sign_in_and_play
+   expect(page).to have_content("Maria has 60 points")
+  end
 end
